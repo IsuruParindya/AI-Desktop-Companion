@@ -84,3 +84,9 @@ hermes/pastes/
 # ==============================
 voice/*.mp3
 voice/*.wav
+# ==============================
+# Loona Persistent Memory
+# ==============================
+hermes/memories/USER.md
+hermes/memories/MEMORY.md
+hermes/memories/*.lock
