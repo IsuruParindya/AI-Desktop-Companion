@@ -1,0 +1,21 @@
+{
+  "rasterizer": "native",
+  "spatial": {
+    "zoom": 1,
+    "ox": 0.5,
+    "oy": 0.5
+  },
+  "tone": {
+    "contrast": 1,
+    "invert": true,
+    "flip": "none"
+  },
+  "fps": 16,
+  "base": {
+    "symbols": "braille"
+  },
+  "per": {},
+  "glyph": "◆",
+  "sources": {},
+  "prompts": {}
+}

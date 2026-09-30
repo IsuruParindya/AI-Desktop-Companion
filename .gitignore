@@ -8,14 +8,17 @@ __pycache__/
 .mypy_cache/
 
 # ==============================
-# Node.js
+# Node.js / Bun
 # ==============================
 node_modules/
+.bun/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Hermes LSP environment
+# ==============================
+# Hermes LSP
+# ==============================
 hermes/lsp/
 
 # ==============================
@@ -27,51 +30,54 @@ hermes/lsp/
 
 hermes/auth.json
 hermes/auth.lock
+hermes/auth/
+hermes/credentials/
+hermes/mcp-tokens/
 
 # ==============================
-# Runtime / Temporary Data
+# Hermes Runtime / Session State
 # ==============================
-*.log
-logs/
-sessions/
-cron/
-
 hermes/.hermes_history
 hermes/logs/
 hermes/sessions/
 hermes/cron/
 
-# Hermes databases
+hermes/runtime/
+hermes/state/
+
+hermes/gateway.lock
+hermes/gateway.pid
+hermes/gateway_state.json
+hermes/gateway-starts.log
+hermes/processes.json
+
+hermes/channel_directory.json
+hermes/channel_aliases.json
+hermes/active_profile
+
+# ==============================
+# Hermes Databases / Kanban
+# ==============================
 hermes/*.db
 hermes/*.db-*
+hermes/kanban/
+hermes/kanban.db*
+hermes/kanban*.lock
 
-# Hermes generated caches
+# ==============================
+# Hermes Caches / Generated Data
+# ==============================
 hermes/*cache*
+hermes/cache/
+hermes/checkpoints/
+hermes/browser-profile/
+hermes/plugin-data/
+
+hermes/.install_id.lock
+hermes/install_id
 
 # ==============================
-# Loona Generated Data
-# ==============================
-hermes/plugins/loona-tools/tools/files/.file_index.json
-
-# ==============================
-# Operating System
-# ==============================
-.DS_Store
-Thumbs.db
-
-# ==============================
-# VS Code
-# ==============================
-.vscode/
-
-# ==============================
-# Hermes Source
-# ==============================
-# Hermes is included as a dependency but its upstream source
-# is not committed to the Loona repository.
-hermes/hermes-agent/
-# ==============================
-# Hermes Local Generated State
+# Hermes Generated Metadata
 # ==============================
 hermes/skills/.curator_state
 hermes/skills/.curator_backups/
@@ -80,13 +86,57 @@ hermes/skills/.usage.json.lock
 hermes/pastes/
 
 # ==============================
+# Hermes Generated UI Data
+# ==============================
+hermes/tui-theme-boot.json
+
+# ==============================
+# Hermes Source / Installed Runtime
+# ==============================
+hermes/hermes-agent/
+hermes/herm/
+
+# ==============================
+# Loona Generated Data
+# ==============================
+hermes/plugins/loona-tools/tools/files/.file_index.json
+
+# ==============================
 # Loona Generated Voice Tests
 # ==============================
 voice/*.mp3
 voice/*.wav
+
 # ==============================
-# Loona Persistent Memory
+# Operating System
 # ==============================
-hermes/memories/USER.md
-hermes/memories/MEMORY.md
-hermes/memories/*.lock
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# VS Code
+# ==============================
+.vscode/
+
+# ==============================
+# Backup / Temporary Files
+# ==============================
+*.bak
+*.tmp
+*.old
+
+# ==============================
+# Accidental duplicate YAML files
+# ==============================
+hermes/skins/*.yaml.yaml
+hermes/memories/
+# ==============================
+# Hermes Generated Metadata
+# ==============================
+hermes/.skills_prompt_snapshot.json
+hermes/skills/.curator_state
+hermes/skills/.curator_backups/
+hermes/skills/.usage.json
+hermes/skills/.usage.json.lock
+hermes/pastes/

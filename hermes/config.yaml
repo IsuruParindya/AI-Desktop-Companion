@@ -118,6 +118,7 @@ skills:
 plugins:
   enabled:
     - loona-tools
+    - eikon
   disabled: []
   entries:
     loona-tools:
@@ -299,4 +300,3 @@ known_builtin_toolsets:
 # fallback_model:
 #   provider: openrouter
 #   model: anthropic/claude-sonnet-4
-

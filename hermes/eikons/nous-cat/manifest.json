@@ -1,0 +1,120 @@
+{
+  "kind": "eikon.package",
+  "schemaVersion": "1.0",
+  "id": "liftaris/nous-cat",
+  "name": "nous-cat",
+  "version": "1.0.0",
+  "display": {
+    "title": "nous-cat",
+    "author": "TunaDev",
+    "glyph": "🐱"
+  },
+  "compatibility": {
+    "eikon": ">=1 <2"
+  },
+  "source": {
+    "base": "blobs/sha256/7e5e3771090dbb60fd7b17291b6b70e4c366411830b736725c408d666c8fc550",
+    "states": {
+      "idle": {
+        "file": "blobs/sha256/b1ddfe2f6af6fa7c36bfb564f0db97661c9b8f709482cdb6315961b8b21d1c05"
+      },
+      "listening": {
+        "file": "blobs/sha256/643555fbc77df100f95dd1cb25336a7c195234d2d75ecf8d3727dd7b250d2754"
+      },
+      "thinking": {
+        "file": "blobs/sha256/87df27dbd8af3e7bb79a45bdfa53a1ddf9d5f8f37ef5e39f763d291df7a06adc"
+      },
+      "speaking": {
+        "file": "blobs/sha256/194602fe9eb495666ffc92364af5ee7af12a29dee97196effb4c867a16c70b4b"
+      },
+      "working": {
+        "file": "blobs/sha256/db75970d873b448d3dd10d47eb53488930adcf313dbe046ec2e7113d1c172121"
+      },
+      "error": {
+        "file": "blobs/sha256/22e75d61f1c928c2b6cdb35cc3a3e35f0db3f4e1d3937ac2ae523c9a0686f208"
+      }
+    }
+  },
+  "entrypoints": {
+    "default": "blobs/sha256/a048c637fde1e987cb2b3e951c359aac70f7623082d96ee182d1bbffa2c36a65"
+  },
+  "files": [
+    {
+      "path": "blobs/sha256/a048c637fde1e987cb2b3e951c359aac70f7623082d96ee182d1bbffa2c36a65",
+      "role": "runtime",
+      "mediaType": "application/vnd.eikon.stream+jsonl",
+      "size": 188892,
+      "digest": "sha256:a048c637fde1e987cb2b3e951c359aac70f7623082d96ee182d1bbffa2c36a65",
+      "encoding": "gzip",
+      "decodedSize": 2085576,
+      "decodedDigest": "sha256:24b192b3cdf2d366ee06d6e5056d174e8aa8abc17ee842462fb8be10385fbf22"
+    },
+    {
+      "path": "blobs/sha256/7e5e3771090dbb60fd7b17291b6b70e4c366411830b736725c408d666c8fc550",
+      "role": "source.base",
+      "mediaType": "image/png",
+      "size": 957195,
+      "digest": "sha256:7e5e3771090dbb60fd7b17291b6b70e4c366411830b736725c408d666c8fc550"
+    },
+    {
+      "path": "blobs/sha256/b1ddfe2f6af6fa7c36bfb564f0db97661c9b8f709482cdb6315961b8b21d1c05",
+      "role": "source.clip",
+      "mediaType": "video/mp4",
+      "size": 877002,
+      "digest": "sha256:b1ddfe2f6af6fa7c36bfb564f0db97661c9b8f709482cdb6315961b8b21d1c05",
+      "signal": "state.idle"
+    },
+    {
+      "path": "blobs/sha256/643555fbc77df100f95dd1cb25336a7c195234d2d75ecf8d3727dd7b250d2754",
+      "role": "source.clip",
+      "mediaType": "video/mp4",
+      "size": 989846,
+      "digest": "sha256:643555fbc77df100f95dd1cb25336a7c195234d2d75ecf8d3727dd7b250d2754",
+      "signal": "state.listening"
+    },
+    {
+      "path": "blobs/sha256/87df27dbd8af3e7bb79a45bdfa53a1ddf9d5f8f37ef5e39f763d291df7a06adc",
+      "role": "source.clip",
+      "mediaType": "video/mp4",
+      "size": 1318681,
+      "digest": "sha256:87df27dbd8af3e7bb79a45bdfa53a1ddf9d5f8f37ef5e39f763d291df7a06adc",
+      "signal": "state.thinking"
+    },
+    {
+      "path": "blobs/sha256/194602fe9eb495666ffc92364af5ee7af12a29dee97196effb4c867a16c70b4b",
+      "role": "source.clip",
+      "mediaType": "video/mp4",
+      "size": 1223389,
+      "digest": "sha256:194602fe9eb495666ffc92364af5ee7af12a29dee97196effb4c867a16c70b4b",
+      "signal": "state.speaking"
+    },
+    {
+      "path": "blobs/sha256/db75970d873b448d3dd10d47eb53488930adcf313dbe046ec2e7113d1c172121",
+      "role": "source.clip",
+      "mediaType": "video/mp4",
+      "size": 988172,
+      "digest": "sha256:db75970d873b448d3dd10d47eb53488930adcf313dbe046ec2e7113d1c172121",
+      "signal": "state.working"
+    },
+    {
+      "path": "blobs/sha256/22e75d61f1c928c2b6cdb35cc3a3e35f0db3f4e1d3937ac2ae523c9a0686f208",
+      "role": "source.clip",
+      "mediaType": "video/mp4",
+      "size": 1203066,
+      "digest": "sha256:22e75d61f1c928c2b6cdb35cc3a3e35f0db3f4e1d3937ac2ae523c9a0686f208",
+      "signal": "state.error"
+    }
+  ],
+  "origin": {
+    "source": "https://eikon.liftaris.dev/packages/liftaris/nous-cat/1.0.0.json",
+    "sourceSpec": "https://eikon.liftaris.dev/packages/liftaris/nous-cat/1.0.0.json",
+    "at": "2026-09-30T11:28:54.249Z",
+    "kind": "catalog-package",
+    "sourceKey": "registry:eikon.liftaris.dev:liftaris/nous-cat@1.0.0",
+    "packageUrl": "https://eikon.liftaris.dev/packages/liftaris/nous-cat/1.0.0.json",
+    "resolvedVersion": "1.0.0",
+    "scope": "profile",
+    "trust": "verified",
+    "identityKey": "registry:eikon.liftaris.dev:liftaris/nous-cat@1.0.0"
+  }
+}
