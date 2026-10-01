@@ -41,6 +41,19 @@ Loona can understand the request, search the user's local drives, identify the a
 - 🛡️ Safety and confirmation rules
 - 🔄 Agent tool workflow
 - ⚙️ Automation framework support
+- 🖥️ Interactive terminal interface
+- 🎭 Animated Eikon interface
+
+## 🖥️ Loona Interface
+
+Loona uses a custom **Herm TUI** interface built on top of the Hermes Agent framework.
+
+The interface provides an interactive terminal environment for communicating with Loona, while displaying the current session, model information, context usage, and the animated **Nous Eikon** interface.
+
+Loona can be started with:
+
+cd /d D:\AI-Desktop-Agent
+bunx herm-tui
 
 ## 🎙️ Voice Interaction
 
