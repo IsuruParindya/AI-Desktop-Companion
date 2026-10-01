@@ -175,13 +175,15 @@ LOONA_OPEN_FILE_BY_QUERY = {
     "name": "loona_open_file_by_query",
     "description": (
         "OPENS a LOCAL file on the user's Windows PC by searching the D: and E: "
-        "drives and opening the best matching result. "
-        "Use this when the user asks to open, launch, play, or view a local "
-        "file, movie, video, song, document, image, or other file by name. "
-        "Examples: 'open World War Z', 'play Avengers', 'open my thesis', "
-        "'open that video'. "
-        "This is specifically for files stored on the user's PC. "
-        "Do NOT use web search for these requests."
+        "drives and opening the best matching result. Use this tool whenever the "
+        "user asks to open, launch, play, watch, or view a local file, movie, TV "
+        "episode, video, song, document, image, or other file by name or "
+        "description. This tool is the PRIMARY method for opening local files. Do "
+        "NOT use execute_code, Python, shell commands, or manual filesystem "
+        "scanning to search D:, E:, or C: for these requests. Examples: 'open "
+        "World War Z', 'play Avengers', 'open my thesis', 'open that video', "
+        "'play season 2 episode 5'. This is specifically for files stored on the "
+        "user's PC. Do NOT use web search for these requests."
     ),
     "parameters": {
         "type": "object",
