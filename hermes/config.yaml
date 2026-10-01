@@ -18,6 +18,7 @@ agent:
   personalities: {}
 
 terminal:
+  enabled: true
   backend: local
   cwd: .
   timeout: 180
