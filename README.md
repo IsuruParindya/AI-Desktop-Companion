@@ -53,7 +53,9 @@ The interface provides an interactive terminal environment for communicating wit
 Loona can be started with:
 
 cd /d D:\AI-Desktop-Agent
-bunx herm-tui
+| Classic CLI | `hermes` | Official Hermes CLI |
+| Native TUI | `hermes --tui` | Official Hermes TUI |
+| Herm TUI | `bunx herm-tui` | Third-party OpenTUI frontend |
 
 ## 🎙️ Voice Interaction
 
