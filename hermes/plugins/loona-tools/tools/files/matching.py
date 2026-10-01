@@ -33,8 +33,49 @@ _VIDEO_METADATA_TOKENS = {
     "bdrip",
     "webdl",
     "webrip",
+    "web dl",
+    "web rip",
     "remux",
     "bluray",
+    "hdtv",
+}
+
+_GENERIC_STOPWORDS = {
+    "a",
+    "an",
+    "and",
+    "at",
+    "by",
+    "dl",
+    "episode",
+    "ep",
+    "file",
+    "find",
+    "for",
+    "from",
+    "image",
+    "in",
+    "launch",
+    "locate",
+    "movie",
+    "music",
+    "my",
+    "of",
+    "on",
+    "open",
+    "play",
+    "please",
+    "season",
+    "series",
+    "show",
+    "start",
+    "the",
+    "to",
+    "video",
+    "watch",
+    "web",
+    "with",
+    "rip",
 }
 
 _SUBTITLE_EXTENSIONS = {
@@ -69,17 +110,33 @@ def _get_keywords(text):
     """
     Extract meaningful keywords from normalized text.
 
-    Returns a list so the matching process can preserve
-    the original keyword-based scoring behaviour.
+    This intentionally drops command words and release metadata so the
+    actual title dominates the search score.
     """
 
     normalized = _normalize_text(text)
+    if not normalized:
+        return []
 
-    return [
-        word
-        for word in normalized.split()
-        if len(word) >= 2
-    ]
+    keywords = []
+
+    for word in normalized.split():
+        if len(word) < 2:
+            continue
+
+        if word in _GENERIC_STOPWORDS:
+            continue
+
+        if word in _VIDEO_METADATA_TOKENS:
+            continue
+
+        keyword_variants = {word, word.replace("-", "")}
+        if keyword_variants & _VIDEO_METADATA_TOKENS:
+            continue
+
+        keywords.append(word)
+
+    return keywords
 
 
 def _count_extra_keywords(query_keywords, filename_keywords):

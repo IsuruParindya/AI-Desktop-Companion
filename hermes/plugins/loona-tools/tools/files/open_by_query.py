@@ -47,6 +47,7 @@ def loona_open_file_by_query(args: dict, **kwargs) -> str:
             "success": False,
             "action": "search_failed",
             "query": query,
+            "index_status": search_result.get("index_status", "unknown"),
             "error": search_result.get(
                 "error",
                 "File search failed.",
@@ -68,6 +69,7 @@ def loona_open_file_by_query(args: dict, **kwargs) -> str:
             "success": False,
             "action": "not_found",
             "query": query,
+            "index_status": search_result.get("index_status", "unknown"),
             "error": (
                 f"No local file matching '{query}' "
                 "was found on D: or E:."
@@ -120,6 +122,7 @@ def loona_open_file_by_query(args: dict, **kwargs) -> str:
                 "success": False,
                 "action": "not_found",
                 "query": query,
+                "index_status": search_result.get("index_status", "unknown"),
                 "error": error_message,
             })
 
@@ -150,6 +153,7 @@ def loona_open_file_by_query(args: dict, **kwargs) -> str:
             "success": False,
             "action": "confirmation_required",
             "query": query,
+            "index_status": search_result.get("index_status", "unknown"),
             "message": (
                 "A weak local filename match was found. "
                 "Do not open it automatically."
@@ -177,6 +181,7 @@ def loona_open_file_by_query(args: dict, **kwargs) -> str:
                 "success": False,
                 "action": "multiple_matches",
                 "query": query,
+                "index_status": search_result.get("index_status", "unknown"),
                 "message": (
                     "Multiple local files are strong matches. "
                     "Do not open one automatically."
@@ -201,6 +206,7 @@ def loona_open_file_by_query(args: dict, **kwargs) -> str:
             "action": "open_failed",
             "query": query,
             "selected_file": best_match,
+            "index_status": search_result.get("index_status", "unknown"),
             "error": open_result.get(
                 "error",
                 "The file could not be opened.",
@@ -217,6 +223,7 @@ def loona_open_file_by_query(args: dict, **kwargs) -> str:
         "query": query,
         "file": best_match["name"],
         "path": best_match["path"],
+        "index_status": search_result.get("index_status", "unknown"),
         "message": (
             f"Successfully opened '{best_match['name']}'."
         ),

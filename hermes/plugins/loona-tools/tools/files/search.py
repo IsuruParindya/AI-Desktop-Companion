@@ -1,7 +1,7 @@
 import json
 import os
 
-from .index import build_file_index
+from .index import build_file_index, get_file_index_status
 from .matching import (
     _get_keywords,
     _normalize_text,
@@ -13,8 +13,8 @@ def _get_candidate_files(query, file_index):
     """
     Quickly narrow the full file index down to likely candidates.
 
-    This prevents score_file() from running against every file
-    on D: and E: for every search.
+    Keep the candidate set broad enough that fuzzy title matching can still
+    select the correct result even when a few ordinary query words are present.
     """
 
     normalized_query = _normalize_text(query)
@@ -24,8 +24,7 @@ def _get_candidate_files(query, file_index):
 
     query_keywords = _get_keywords(normalized_query)
 
-    # First try files whose normalized filename contains
-    # the complete query.
+    # First try files whose normalized filename contains the complete query.
     direct_matches = []
 
     for file_info in file_index:
@@ -38,8 +37,7 @@ def _get_candidate_files(query, file_index):
     if direct_matches:
         return direct_matches
 
-    # Otherwise, look for files containing at least one
-    # meaningful query keyword.
+    # Otherwise, look for files containing at least one meaningful keyword.
     keyword_matches = []
 
     for file_info in file_index:
@@ -52,14 +50,12 @@ def _get_candidate_files(query, file_index):
         ):
             keyword_matches.append(file_info)
 
-    # If nothing matched directly, return the full index.
-    #
-    # This preserves fuzzy matching for cases such as:
-    # "Avngers" → "Avengers"
+    # Do not prematurely remove the rest of the file index. A weaker keyword
+    # match can still be a worse candidate than a real fuzzy title match.
     if not keyword_matches:
         return file_index
 
-    return keyword_matches
+    return list(dict.fromkeys(keyword_matches + file_index))
 
 
 def loona_search_files(args: dict, **kwargs) -> str:
@@ -97,6 +93,7 @@ def loona_search_files(args: dict, **kwargs) -> str:
     )
 
     file_index = build_file_index()
+    index_status = get_file_index_status()
 
     # ---------------------------------------------------------
     # Fast candidate filtering
@@ -174,5 +171,6 @@ def loona_search_files(args: dict, **kwargs) -> str:
         "success": True,
         "query": query,
         "result_count": len(results),
+        "index_status": index_status.get("status", "unknown"),
         "results": results,
     })
